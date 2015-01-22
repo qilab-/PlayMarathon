@@ -26,3 +26,7 @@ dist
 /.project
 /RUNNING_PID
 /.settings
+/.target/
+
+# play
+.cache

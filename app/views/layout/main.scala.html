@@ -1,15 +1,32 @@
+@* <meta charset="UTF-8"/> FOR ECLIPSE CHARSET DETECTION *@
 @(title: String)(content: Html)
 
 <!DOCTYPE html>
 
-<html>
+<html lang="ja">
     <head>
+    	<meta charset="UTF-8"/>
         <title>@title</title>
         <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/main.css")">
         <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.png")">
         <script src="@routes.Assets.at("javascripts/jquery-1.9.0.min.js")" type="text/javascript"></script>
     </head>
     <body>
-        @content
+    	<div id="container">
+	    	@* ヘッダー出力 *@
+	    	@tag.header()
+	    	<div class="clearfix">
+		    	<div id="sidebar">
+			    	@* サイドメニュー出力 *@
+			    	@tag.sidemenu()
+		    	</div>
+		    	@*　メインコンテンツ出力 *@
+		    	<div id="main">
+		        	@content
+		        </div>
+	        </div>
+	        @* フッター出力 *@
+	        @tag.footer()
+        </div>
     </body>
 </html>

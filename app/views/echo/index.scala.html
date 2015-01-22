@@ -1,0 +1,15 @@
+@* <meta charset="UTF-8"/> FOR ECLIPSE CHARSET DETECTION *@
+@(title: String, bindForm: play.data.Form[models.request.Echo.EchoResultGetPostRequest])
+
+@import layout._
+@import helper._
+
+@main(title) {
+	<h2>エコープログラム</h2>
+	@form(action = CSRF(routes.Echo.result()), 'id -> "echoForm") {
+		@inputText(bindForm("name"), 'class -> "form-control")
+		@inputText(bindForm("age"), 'class -> "form-control")
+		<input type="submit" class="btn btu-default" value="送信" />
+	}
+
+}

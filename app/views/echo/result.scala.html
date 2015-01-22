@@ -1,0 +1,11 @@
+@* <meta charset="UTF-8"/> FOR ECLIPSE CHARSET DETECTION *@
+@(title: String, result: models.response.Echo.EchoResponse)
+
+@import layout._
+@import helper._
+
+@main(title) {
+	<h2>エコープログラム</h2>
+	<p>名前：　@{result.getName} さん</p>
+	<p>年齢：　@{result.getAge} 歳</p>
+}
